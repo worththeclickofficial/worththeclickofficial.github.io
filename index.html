@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Worth the Click helps you discover clever home gadgets, useful everyday products, and thoughtful gift ideas.">
+  <title>Worth the Click | Clever Finds. Everyday Wins.</title>
+  <style>
+    :root {
+      --teal: #186054;
+      --coral: #FF7A59;
+      --cream: #FAF8F3;
+      --ink: #20332F;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+    header {
+      background: white;
+      border-bottom: 1px solid #e7e8e3;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .logo {
+      color: var(--teal);
+      font-size: 25px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    nav a {
+      margin-left: 16px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav a:hover { color: var(--coral); }
+    .hero {
+      padding: 90px 7%;
+      text-align: center;
+      background: linear-gradient(145deg, #e3f0e9, #fff6ed);
+    }
+    .eyebrow {
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 66px);
+      line-height: 1.12;
+      max-width: 850px;
+      margin: 18px auto;
+    }
+    h1 span { color: var(--teal); }
+    .hero p {
+      max-width: 590px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+    }
+    .button {
+      display: inline-block;
+      padding: 13px 26px;
+      background: var(--teal);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .button:hover { background: #10493f; }
+    section {
+      padding: 65px 7%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 { font-size: 32px; margin-bottom: 8px; }
+    .subtitle { color: #66736e; margin-bottom: 30px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border: 1px solid #e7e8e3;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.035);
+    }
+    .card .emoji { font-size: 36px; }
+    .card h3 { margin-bottom: 8px; }
+    .card p { color: #66736e; font-size: 15px; }
+    .about {
+      background: #e8f1ed;
+      border-radius: 18px;
+      padding: 38px;
+    }
+    footer {
+      text-align: center;
+      background: var(--ink);
+      color: white;
+      padding: 35px 7%;
+    }
+    footer a { color: white; margin: 0 9px; }
+    footer p { font-size: 13px; opacity: .85; }
+    @media (max-width: 600px) {
+      header { justify-content: center; text-align: center; }
+      nav a { margin: 0 7px; }
+      .hero { padding: 65px 7%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html">Worth the Click.</a>
+    <nav>
+      <a href="#discover">Discover</a>
+      <a href="#about">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="eyebrow">Smart Finds for Everyday Life</div>
+      <h1>Little finds.<br><span>Big difference.</span></h1>
+      <p>
+        Discover clever home gadgets, useful everyday
+        products, and thoughtful gifts that make life
+        a little easier and a lot more interesting.
+      </p>
+      <a class="button" href="#discover">Explore Our Finds →</a>
+    </div>
+
+    <section id="discover">
+      <h2>Discover Something Worth Clicking</h2>
+      <p class="subtitle">
+        Curated ideas for your home and everyday life.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <div class="emoji">🍳</div>
+          <h3>Kitchen Gadgets</h3>
+          <p>Clever tools and practical cooking helpers.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🏡</div>
+          <h3>Home & Organization</h3>
+          <p>Useful finds for a more organized home.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🎁</div>
+          <h3>Gift Ideas</h3>
+          <p>Thoughtful and unexpected gift inspiration.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">✨</div>
+          <h3>Everyday Problem-Solvers</h3>
+          <p>Small discoveries that simplify daily routines.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about">
+        <h2>About Worth the Click</h2>
+        <p>
+          Worth the Click is an independent product discovery
+          website focused on clever, practical, and interesting
+          finds for everyday life.
+        </p>
+        <p>
+          Our goal is simple: help you discover products
+          worth exploring, without the endless searching.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Worth the Click.</strong>
+    <p>Clever finds. Everyday wins.</p>
+    <p>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+    </p>
+    <p>
+      As an Amazon Associate I earn from qualifying purchases.
+    </p>
+    <p>© 2026 Worth the Click. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
