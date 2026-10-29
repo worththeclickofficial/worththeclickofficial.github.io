@@ -13,10 +13,13 @@ ctx.fillStyle=$('whiteCard').checked?'#ffffff':bg;ctx.fillRect(0,0,1000,1500);
 photo(img,20,90,960,1370);
 if(!img)fitText('Add your product photo',80,650,840,120,38,ink,500);
 rounded(30,24,430,56,16,'rgba(255,255,255,0.88)');
-fitText('WORTH THE CLICK',48,31,394,42,28,ink);
+fitText('WORTH THE',48,31,238,42,28,ink);
+fitText('CLICK',292,31,132,42,28,accent);
+rounded(35,1482,930,8,4,ink);
 const panelY=$('headlinePosition').value==='bottom'?1110:110;
-rounded(35,panelY,930,245,24,'rgba(255,249,238,'+(Number($('panelOpacity').value)/100)+')');
+rounded(35,panelY,930,245,24,'rgba(255,223,72,'+(Number($('panelOpacity').value)/100)+')');
 fitText($('headline').value,65,panelY+20,870,205,86,ink);
+rounded(75,panelY+232,180,7,3,accent);
 if($('photoBadge').checked&&$('badge').value.trim()){
 const badgeY=$('headlinePosition').value==='bottom'?110:1360;
 rounded(250,badgeY,500,75,22,'#ffdf48');
