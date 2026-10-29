@@ -8,7 +8,23 @@ function rounded(x,y,w,h,r,fill){ctx.fillStyle=fill;ctx.beginPath();ctx.roundRec
 function linesFor(text,maxWidth){let lines=[];for(const para of text.split('\n')){let line='';for(const word of para.split(/\s+/).filter(Boolean)){if(ctx.measureText(word).width>maxWidth){if(line){lines.push(line);line=''}let part='';for(const ch of word){if(ctx.measureText(part+ch).width>maxWidth){lines.push(part);part=''}part+=ch}line=part;continue}const test=line?line+' '+word:word;if(ctx.measureText(test).width>maxWidth&&line){lines.push(line);line=word}else line=test}lines.push(line)}return lines}
 function fitText(text,x,y,w,h,maxSize,color,weight=800){if(!text.trim())return;let size=maxSize,lines;do{ctx.font=weight+' '+size+'px Arial, Helvetica, sans-serif';lines=linesFor(text,w);if(lines.length*size*1.13<=h)break;size-=1}while(size>1);ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';const start=y+(h-lines.length*size*1.13)/2+size*.565;lines.forEach((s,i)=>ctx.fillText(s,x+w/2,start+i*size*1.13))}
 function photo(image,x,y,w,h){if(!image)return;const k=Math.min(w/image.width,h/image.height)*(Number($('scale').value)/100);const dw=image.width*k,dh=image.height*k;ctx.drawImage(image,x+(w-dw)/2,y+(h-dh)/2,dw,dh)}
-function draw(){const bg=$('bg').value,ink=$('ink').value,accent=$('accent').value;ctx.clearRect(0,0,1000,1500);ctx.fillStyle=bg;ctx.fillRect(0,0,1000,1500);fitText('WORTH THE CLICK',80,45,840,60,38,ink);rounded(442,124,116,7,4,accent);
+function drawBrandHeader(ink,accent){
+ctx.save();
+const label='WORTH THE CLICK',spacing=2.1;
+ctx.font='900 44px Arial, Helvetica, sans-serif';
+ctx.fillStyle=ink;ctx.textAlign='left';ctx.textBaseline='middle';
+const letters=Array.from(label),width=letters.reduce((sum,ch)=>sum+ctx.measureText(ch).width,0)+spacing*(letters.length-1);
+let x=(1000-width)/2;
+for(const ch of letters){ctx.fillText(ch,x,77);x+=ctx.measureText(ch).width+spacing;}
+ctx.strokeStyle='#ffdf48';ctx.lineWidth=15;ctx.lineCap='round';
+const left=(1000-width)/2-70,right=(1000+width)/2+70;
+for(const [x1,y1,x2,y2] of [[left-18,49,left+9,77],[left-43,91,left-12,102],[right+18,49,right-9,77],[right+43,91,right+12,102]]){
+ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+}
+ctx.strokeStyle=accent;ctx.lineWidth=10;ctx.beginPath();ctx.moveTo(405,121);ctx.lineTo(595,121);ctx.stroke();
+ctx.restore();
+}
+function draw(){const bg=$('bg').value,ink=$('ink').value,accent=$('accent').value;ctx.clearRect(0,0,1000,1500);ctx.fillStyle=bg;ctx.fillRect(0,0,1000,1500);drawBrandHeader(ink,accent);
 if(layout==='solution'){rounded(50,166,900,263,25,ink);fitText($('headline').value,90,185,820,225,91,'#ffffff')}else{if(layout==='surprise')rounded(50,166,900,263,25,'#ffdf48');fitText($('headline').value,90,185,820,225,91,ink)}
 const card=$('whiteCard').checked?'#ffffff':bg;rounded(50,465,900,605,28,card);
 if(layout==='transform'&&img2){photo(img,65,485,425,565);photo(img2,510,485,425,565);fitText('→',458,730,84,100,64,accent)}else photo(img,65,485,870,565);
