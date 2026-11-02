@@ -97,6 +97,9 @@
       padding: 28px;
       box-shadow: 0 5px 20px rgba(0,0,0,.035);
     }
+    .board-card { color: inherit; text-decoration: none; }
+    .board-card span { color: var(--teal); font-weight: bold; text-decoration: underline; }
+    .board-card:hover, .board-card:focus-visible { outline: 2px solid var(--teal); }
     .card .emoji { font-size: 36px; }
     .card h3 { margin-bottom: 8px; }
     .card p { color: #66736e; font-size: 15px; }
@@ -151,11 +154,12 @@
       </p>
 
       <div class="grid">
-        <div class="card">
-          <div class="emoji">🍳</div>
+        <a class="card board-card" href="https://www.pinterest.com/findsbyworththeclick/kitchen-gadgets-cooking-tools/">
+          <div class="emoji" aria-hidden="true">🍳</div>
           <h3>Kitchen Gadgets</h3>
           <p>Clever tools and practical cooking helpers.</p>
-        </div>
+          <span>Browse kitchen finds on Pinterest →</span>
+        </a>
         <div class="card">
           <div class="emoji">🏡</div>
           <h3>Home & Organization</h3>
